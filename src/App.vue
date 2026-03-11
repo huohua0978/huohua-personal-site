@@ -76,13 +76,14 @@
 
                 <v-container class="leleo-left-socialIconsContainer">
                     <v-row align="center" justify="center">
-                    <v-col class="pa-1" cols="auto" v-for="item in socialPlatformIcons">
+                    <v-col class="pa-1 social-item" cols="auto" v-for="item in socialPlatformIcons">
                         <v-btn :size="xs?25:33" variant="tonal" color="var(--leleo-vcard-color)"
                         class="ma-1 leleo-social-bticon"
                         icon
                         :href="item.link" target="_blank"
                         >
                     <v-icon :icon=item.icon :size="xs?20:25" class="social-bticon-icon"></v-icon></v-btn>
+                    <div class="social-label">{{ item.label }}</div>
                     </v-col>
                     </v-row>
 
@@ -259,4 +260,18 @@
 <style scoped>
   @import url(/css/app.less);
   @import url(/css/mobile.less);
+
+  .social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .social-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    white-space: nowrap;
+  }
 </style>

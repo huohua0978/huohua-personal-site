@@ -53,9 +53,9 @@ const config = {
 
 	//社交按钮
 	socialPlatformIcons: [
-		{ icon: "mdi-email", link: "mailto:1045834980@qq.com" },
-		{ icon: "mdi-qqchat", link: "tencent://message/?uin=1045834980&Site=&Menu=yes" },
-		{ icon: "mdi-wechat", link: "weixin://dl/chat?18879499001" }
+		{ icon: "mdi-email", link: "mailto:1045834980@qq.com", label: "1045834980@qq.com" },
+		{ icon: "mdi-qqchat", link: "tencent://message/?uin=1045834980&Site=&Menu=yes", label: "QQ 1045834980" },
+		{ icon: "mdi-wechat", link: "weixin://dl/chat?18879499001", label: "微信 18879499001" }
 	],
 
 	//打字机
