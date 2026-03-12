@@ -138,8 +138,8 @@ const config = {
 	//项目卡片 其中 字段"show"控制初始卡片的text是否展开
 	projectcards: [
 		{ go: "🚀 前往", img: "https://unsplash.com/photos/UpNwL3hTcRg/download?force=true", title: "成长经历", subtitle: "1,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://ycn3ax2n6dfb.feishu.cn/docx/K8XddCAjboOB9SxrG8Lc1v29nGc", show: false },
-		{ go: "📝 前往", img: "/img/sunshine.jpg", title: "发表作品", subtitle: "2,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://xhslink.com/m/8lJWZv2myFl", show: false },
-		{ go: "👍 前往", img: "/img/sunshine.jpg", title: "AI扯淡", subtitle: "3,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://ycn3ax2n6dfb.feishu.cn/docx/KWjodgvM8oUAVmxo41xcpqg0n2c", show: false },
+		{ go: "📝 前往", img: "https://cdn.pixabay.com/photo/2016/11/29/05/08/notebook-1869641_1280.jpg", title: "发表作品", subtitle: "2,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://xhslink.com/m/8lJWZv2myFl", show: false },
+		{ go: "👍 前往", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80", title: "AI扯淡", subtitle: "3,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://ycn3ax2n6dfb.feishu.cn/docx/KWjodgvM8oUAVmxo41xcpqg0n2c", show: false },
 		{ go: "🗃 前往", img: "/img/sunshine.jpg", title: "人生杂谈", subtitle: "4,000 miles of wonder", text: "If you see this line, I've managed to get your attention.", url: "https://ycn3ax2n6dfb.feishu.cn/docx/HApndTEJqojpDExeb8icgOYUnUb", show: false },
 	],
 
