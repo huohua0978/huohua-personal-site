@@ -90,6 +90,17 @@ export default {
           ...config.projectcards.map(item => item.img)
         ];
         return new Promise((resolve, reject) => {
+          let done = false;
+          const finalize = () => {
+            if (done) return;
+            done = true;
+            resolve();
+          };
+          // 全局兜底超时，避免任何资源导致一直 loading
+          const hardTimeout = setTimeout(() => {
+            finalize();
+          }, 8000);
+
           const imagePromises = imageUrls.map((url) => {
             return new Promise((resolve, reject) => {
                 const imgs = new Image();
@@ -112,18 +123,34 @@ export default {
               const img = new Image();
               img.src = imageurl;
               // resolve() 鍑芥暟閫氬皢涓€涓?Promise 瀵硅薄浠庢湭瀹屾垚鐘舵€佽浆鍙樹负宸插畬鎴愮姸鎬?
-              img.onload = () => {resolve();};
-              img.onerror = (err) => {reject(err);};
+              img.onload = () => { finalize(); clearTimeout(hardTimeout); };
+              img.onerror = () => { finalize(); clearTimeout(hardTimeout); };
             }else{
               const video = this.$refs.VdPlayer;
+              const videoFallback = setTimeout(() => {
+                finalize();
+                clearTimeout(hardTimeout);
+              }, 3000);
               video.onloadedmetadata = () => {
-                setTimeout(() => {
-                }, "200");  
-                resolve();
+                clearTimeout(videoFallback);
+                finalize();
+                clearTimeout(hardTimeout);
               };
-              video.onerror = (err) => {resolve();};
+              video.oncanplay = () => {
+                clearTimeout(videoFallback);
+                finalize();
+                clearTimeout(hardTimeout);
+              };
+              video.onerror = () => {
+                clearTimeout(videoFallback);
+                finalize();
+                clearTimeout(hardTimeout);
+              };
             }
-          })
+          }).catch(() => {
+            finalize();
+            clearTimeout(hardTimeout);
+          });
         });
      };
 
